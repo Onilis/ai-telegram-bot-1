@@ -50,7 +50,7 @@ public class WebConfig {
         return builder.build();
     }
 
-    // ✅ Используем slf4j logger вместо System.out.println
+    // ✅ Используем slf4j
     private ExchangeFilterFunction logRequest() {
         return ExchangeFilterFunction.ofRequestProcessor(clientRequest -> {
             log.debug("🌐 Request: {} {}", clientRequest.method(), clientRequest.url());
@@ -71,4 +71,5 @@ public class WebConfig {
             return Mono.just(clientResponse);
         });
     }
+
 }
