@@ -14,7 +14,6 @@ public class AiBotApplication {
         SpringApplication.run(AiBotApplication.class, args);
     }
 
-    // ✅ @Bean теперь на уровне класса — Spring его увидит
     @Bean
     public TelegramBotsApi telegramBotsApi(EnhancedAiTelegramBot bot) throws Exception {
         TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
